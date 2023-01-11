@@ -1,0 +1,35 @@
+<div class="item" [class.completed]="item.done">
+  <div class="item__close" (click)="deleteItem()">
+    <mat-icon>close</mat-icon>
+  </div>
+
+  <div class="item__name">
+    <span>Name: </span>
+    {{item.label}}
+  </div>
+  <div class="item__description">
+    <span>Category: </span>
+    {{item.category}}
+  </div>
+  <div class="item__description">
+    <span>Description:</span>
+    {{item.description}}
+  </div>
+
+  <div class="item__buttons">
+    <button
+        (click)="editItem()"
+        class="main-btn item-button"
+        color="primary"
+        mat-flat-button>
+      Edit
+    </button>
+    <button
+        (click)="toggleItemDone()"
+        class="main-btn item-button"
+        color="secondary"
+        mat-flat-button>
+      Mark as {{item.done ? 'In progress' : 'Done' }}
+    </button>
+  </div>
+</div>

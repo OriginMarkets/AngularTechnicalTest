@@ -1,0 +1,41 @@
+<div class="edit-item">
+  <div class="edit-item-header">
+    <button
+        class="edit-item-button button-back"
+        mat-flat-button
+        color="primary"
+        (click)="navigateToList()">
+      <mat-icon>arrow_back</mat-icon>
+      <span>Back To List</span>
+    </button>
+    <div class="title">{{existedData ? 'Edit' : 'Create'}}</div>
+  </div>
+
+  <form class="edit-item-form" [formGroup]="form" (submit)="submitForm()">
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <input matInput formControlName="label" type="text" placeholder="LABEL"/>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <input matInput formControlName="category" type="category" placeholder="CATEGORY"/>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <textarea matInput formControlName="description" type="text" placeholder="DESCRIPTION">
+        </textarea>
+      </mat-form-field>
+    </div>
+
+    <button
+        class="edit-item-button"
+        mat-flat-button
+        color="primary"
+        [disabled]="form.invalid">
+      {{existedData ? 'Edit' : 'Create'}}
+    </button>
+  </form>
+</div>
+
