@@ -1,0 +1,18 @@
+<div class="items">
+  <div class="items-container">
+
+    <div class="items-list">
+      <div *ngFor="let item of todos$ | async" class="item">
+        <app-todo-item [item]="item"></app-todo-item>
+      </div>
+    </div>
+  </div>
+
+  <button
+      mat-flat-button
+      class="main-btn create-item-btn"
+      color="primary"
+      (click)="createItem()">
+    Create Item
+  </button>
+</div>

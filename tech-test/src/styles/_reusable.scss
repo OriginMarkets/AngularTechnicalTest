@@ -1,0 +1,12 @@
+.form-row {
+  margin: 10px 0 30px 0;
+  display: flex;
+
+  .form-field {
+    width: 100%;
+    mat-form-field {
+      width: 100%;
+    }
+  }
+}
+
